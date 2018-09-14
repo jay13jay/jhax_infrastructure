@@ -20,8 +20,8 @@ resource "aws_subnet" "pb_pvt" {
   }
 }
 
-resource "aws_db_subnet_group" "redmine_db" {
-  name       = "redmine_db"
+resource "aws_db_subnet_group" "pb_db" {
+  name       = "pb_db"
   subnet_ids = ["${aws_subnet.pb_main.id}", "${aws_subnet.pb_pvt.id}"]
 
   tags {
