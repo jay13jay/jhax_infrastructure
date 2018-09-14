@@ -1,0 +1,6 @@
+secret/*
+conf/config.tf
+*.idea/*
+*tfstate*
+*secret*
+*.terraform*
