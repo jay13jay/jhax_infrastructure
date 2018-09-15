@@ -1,4 +1,4 @@
-# jhax_infrastructure
+# JHAX Infrastructure
 Infra scripts to provision and manage JHAX infrastructure
 
 # Requirements
@@ -8,7 +8,6 @@ Infra scripts to provision and manage JHAX infrastructure
 - git
 
 # How to use
-#### Please note: provided paths are for convenience and can be changed if you'd like, and know how
 1) Clone the repository and create secrets directory
     ```bash
     git clone git@github.com:jay13jay/jhax_infrastructure.git && cd jhax_infrastructure;mkdir Terraform/Wordpress/secret
