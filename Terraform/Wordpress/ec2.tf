@@ -20,9 +20,10 @@ resource "aws_instance" "wordpress" {
 
   provisioner "remote-exec" {
     inline = [ "sudo yum install -y docker vim",
+      "sed -i 's/overlay2/devicemapper/' /etc/sysconfig/docker-storage",
       "sudo service docker restart",
       "sudo docker pull wordpress",
-      "sudo docker run --name wordpress -p 80:80 -e WORDPRESS_DB_HOST=${aws_db_instance.wordpress_db.endpoint} -e WORDPRESS_DB_NAME=wordpress_db -e WORDPRESS_DB_USER=wordpress -e WORDPRESS_DB_PASSWORD=wordpress -d wordpress"
+      "sudo docker run --name wordpress -p 8080:80 -e WORDPRESS_DB_HOST=${aws_db_instance.wordpress_db.endpoint} -e WORDPRESS_DB_NAME=wordpress_db -e WORDPRESS_DB_USER=wordpress -e WORDPRESS_DB_PASSWORD=wordpress -d wordpress"
       ]
   }
 }
